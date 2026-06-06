@@ -1,0 +1,20 @@
+﻿@model List<ALTIS.Models.Classroom>
+
+<h2>My Enrolled Classrooms</h2>
+
+<table class="table table-striped">
+    <thead><tr><th>Title</th><th>Course ID</th><th>Section</th></tr></thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Title</td>
+                <td>@c.CourseID</td>
+                <td>@c.SectionID</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/StudentEnrollment/Register" class="btn btn-primary">+ Register New Classroom</a>
+<a href="/Auth/DashboardStudent" class="btn btn-secondary">← Back to Dashboard</a>

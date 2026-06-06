@@ -1,0 +1,17 @@
+﻿@{
+    var assignmentId = ViewBag.AssignmentID;
+    var studentId = ViewBag.StudentID;
+}
+
+<h2>Submit Assignment</h2>
+
+<form method="post" asp-action="Submit" enctype="multipart/form-data">
+    <input type="hidden" name="assignmentId" value="@assignmentId" />
+
+    <label>Select File (PDF/DOC)</label>
+    <input type="file" name="file" class="form-control" required />
+
+    <br />
+    <button type="submit" class="btn btn-success">Submit</button>
+    <a href="/StudentAssignment/List?studentId=@studentId" class="btn btn-secondary">Cancel</a>
+</form>

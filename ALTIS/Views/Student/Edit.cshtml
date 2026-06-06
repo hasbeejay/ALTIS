@@ -1,0 +1,30 @@
+﻿@model ALTIS.Models.Student
+
+<h2>Edit Student</h2>
+<form method="post" asp-action="Edit">
+    <input type="hidden" asp-for="StudentID" />
+
+    <label>First Name</label>
+    <input asp-for="FirstName" class="form-control" required />
+
+    <label>Last Name</label>
+    <input asp-for="LastName" class="form-control" required />
+
+    <label>Contact</label>
+    <input asp-for="Contact" class="form-control" />
+
+    <label>Email</label>
+    <input asp-for="StudentMail" class="form-control" required />
+
+    <label>Password</label>
+    <input asp-for="StudentPassword" type="password" class="form-control" required />
+
+    <label>Address</label>
+    <input asp-for="Address" class="form-control" />
+
+    <label>Section ID</label>
+    <input asp-for="SectionID" class="form-control" />
+
+    <br />
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

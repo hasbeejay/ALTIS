@@ -1,0 +1,51 @@
+﻿@model List<ALTIS.Models.Faculty>
+<h2>All Faculty</h2>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["ErrorMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var f in Model)
+        {
+            <tr>
+                <td>@f.FacultyID</td>
+                <td>@f.FirstName @f.LastName</td>
+                <td>@f.FacultyMail</td>
+                <td>@f.Contact</td>
+                <td>
+                    <a href="/Faculty/Edit/@f.FacultyID" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="/Faculty/Delete/@f.FacultyID" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Faculty/Add" class="btn btn-primary">+ Add New Faculty</a>
+<div class="d-flex gap-2">
+    <a href="/Faculty/List.cshtml" class="btn btn-secondary">Refresh</a>
+    <a href="/Auth/DashboardAdmin.cshtml" class="btn btn-outline-dark">Cancel / Discard</a>
+</div>

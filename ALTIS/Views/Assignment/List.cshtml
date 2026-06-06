@@ -1,0 +1,28 @@
+﻿@model List<ALTIS.Models.Assignment>
+
+<h2>All Assignments</h2>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Classroom</th>
+            <th>Due</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.AssignmentID</td>
+                <td>@a.Title</td>
+                <td>@a.ClassroomTitle</td>
+                <td>@a.DueDate.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Assignment/Add.cshtml" class="btn btn-primary">+ Add Assignment</a>
+<a href="/Assignment/List.cshtml" class="btn btn-secondary">Back</a>

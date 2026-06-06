@@ -1,0 +1,24 @@
+﻿@model List<ALTIS.Models.Classroom>
+
+<h2>Join a Classroom</h2>
+
+<table class="table table-bordered">
+    <thead><tr><th>Title</th><th>Course</th><th>Section</th><th>Action</th></tr></thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Title</td>
+                <td>@c.CourseID</td>
+                <td>@c.SectionID</td>
+                <td>
+                    <a href="/StudentEnrollment/Enroll?classroomId=@c.ClassroomID" class="btn btn-sm btn-success">
+                        Join
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Student/Dashboard" class="btn btn-secondary">← Back</a>

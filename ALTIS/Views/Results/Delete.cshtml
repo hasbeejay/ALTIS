@@ -1,0 +1,10 @@
+﻿@model ALTIS.Models.Result
+
+<h2>Delete Result</h2>
+<p>Are you sure you want to delete the result with ID <strong>@Model.ResultID</strong> for Student ID <strong>@Model.StudentID</strong>?</p>
+
+<form method="post" asp-action="Delete">
+    <input type="hidden" asp-for="ResultID" />
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a href="/Results/List" class="btn btn-secondary">Cancel</a>
+</form>

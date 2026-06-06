@@ -1,0 +1,30 @@
+﻿@model ALTIS.Models.Announcement
+@{
+    var classrooms = ViewBag.Classrooms as List<ALTIS.Models.Classroom>;
+}
+
+<h2>Post New Announcement</h2>
+
+<form method="post" asp-action="Add">
+    <label>Select Classroom</label>
+    <select asp-for="ClassroomID" class="form-control" required>
+        <option value="">-- Select --</option>
+        @foreach (var c in classrooms)
+        {
+            <option value="@c.ClassroomID">@c.Title</option>
+        }
+    </select>
+
+    <label>Title</label>
+    <input asp-for="Title" class="form-control" required />
+
+    <label>Message</label>
+    <textarea asp-for="Message" class="form-control" rows="4" required></textarea>
+
+    <br />
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-success">Post</button>
+        <a href="/Announcement/List.cshtml" class="btn btn-secondary">Back</a>
+        <a href="/Auth/DashboardFaculty.cshtml" class="btn btn-outline-dark">Discard</a>
+    </div>
+</form>

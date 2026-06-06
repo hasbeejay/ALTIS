@@ -1,0 +1,27 @@
+﻿@model ALTIS.Models.Result
+
+<h2>Add Result</h2>
+
+<form method="post" asp-action="Add">
+    <label>Result ID</label>
+    <input asp-for="ResultID" class="form-control" required />
+
+    <label>Student ID</label>
+    <input asp-for="StudentID" class="form-control" required />
+
+    <label>Admin ID</label>
+    <input asp-for="AdminID" class="form-control" required />
+
+    <label>GPA</label>
+    <input asp-for="GPA" type="number" step="0.01" class="form-control" required />
+
+    <label>Remarks</label>
+    <input asp-for="Remarks" class="form-control" />
+
+    <br />
+    <button type="submit" class="btn btn-primary">Add Result</button>
+    <div class="d-flex gap-2">
+        <a href="/Result/List" class="btn btn-secondary">Back</a>
+        <a href="/Auth/DashboardAdmin" class="btn btn-outline-dark">Cancel / Discard</a>
+    </div>
+</form>

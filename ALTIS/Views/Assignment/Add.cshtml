@@ -1,0 +1,36 @@
+﻿@model ALTIS.Models.Assignment
+@{
+    var classrooms = ViewBag.Classrooms as List<ALTIS.Models.Classroom>;
+}
+
+<h2>Create Assignment</h2>
+
+<form method="post" asp-action="Add">
+    <label>Assignment ID</label>
+    <input asp-for="AssignmentID" class="form-control" required />
+
+    <label>Classroom</label>
+    <select asp-for="ClassroomID" class="form-control" required>
+        <option value="">-- Select Classroom --</option>
+        @foreach (var c in classrooms)
+        {
+            <option value="@c.ClassroomID">@c.Title</option>
+        }
+    </select>
+
+    <label>Title</label>
+    <input asp-for="Title" class="form-control" required />
+
+    <label>Description</label>
+    <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+
+    <label>Due Date</label>
+    <input asp-for="DueDate" type="date" class="form-control" required />
+
+    <br />
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-success">Create Assignment</button>
+        <a href="/Assignment/List.cshtml" class="btn btn-secondary">Back</a>
+        <a href="/Auth/DashboardFaculty.cshtml" class="btn btn-outline-dark">Discard</a>
+    </div>
+</form>

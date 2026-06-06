@@ -1,0 +1,27 @@
+﻿@model ALTIS.Models.Classroom
+
+<h2>Create New Classroom</h2>
+
+<form method="post" asp-action="Add">
+    <label>Classroom ID</label>
+    <input asp-for="ClassroomID" class="form-control" required />
+
+    <label>Title</label>
+    <input asp-for="Title" class="form-control" required />
+
+    <label>Course ID</label>
+    <input asp-for="CourseID" class="form-control" required />
+
+    <label>Faculty ID</label>
+    <input asp-for="FacultyID" class="form-control" required />
+
+    <label>Section ID</label>
+    <input asp-for="SectionID" class="form-control" required />
+
+    <br />
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-success">Create Classroom</button>
+        <a href="/Classroom/List.cshtml" class="btn btn-secondary">Back</a>
+        <a href="/Auth/DashboardFaculty.cshtml" class="btn btn-outline-dark">Cancel / Discard</a>
+    </div>
+</form>

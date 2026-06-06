@@ -1,0 +1,42 @@
+﻿@model List<ALTIS.Models.Section>
+
+<h2>All Sections</h2>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["ErrorMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr><th>Section ID</th><th>Name</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.SectionID</td>
+                <td>@s.SectionName</td>
+                <td>
+                    <a href="/Section/Delete/@s.SectionID" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Section/Add" class="btn btn-primary">+ Add New Section</a>
+<div class="d-flex gap-2">
+    <a href="/Auth/DashboarAdmin" class="btn btn-outline-dark">Cancel / Discard</a>
+</div>

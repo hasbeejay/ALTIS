@@ -1,0 +1,32 @@
+﻿@model ALTIS.Models.Faculty
+
+<h2>Edit Faculty</h2>
+
+<form method="post" asp-action="Edit">
+    <input type="hidden" asp-for="FacultyID" />
+
+    <label>First Name</label>
+    <input asp-for="FirstName" class="form-control" required />
+
+    <label>Last Name</label>
+    <input asp-for="LastName" class="form-control" required />
+
+    <label>Contact</label>
+    <input asp-for="Contact" class="form-control" />
+
+    <label>Email</label>
+    <input asp-for="FacultyMail" class="form-control" required />
+
+    <label>Password</label>
+    <input asp-for="FacultyPassword" class="form-control" required />
+
+    <label>Address</label>
+    <input asp-for="Address" class="form-control" />
+
+    <br />
+    <button type="submit" class="btn btn-primary">Update</button>
+    <div class="d-flex gap-2">
+        <a href="/Faculty/List.cshtml" class="btn btn-secondary">Back</a>
+        <a href="/Auth/DashboardAdmin.cshtml" class="btn btn-outline-dark">Cancel / Discard</a>
+    </div>
+</form>

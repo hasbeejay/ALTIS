@@ -1,0 +1,23 @@
+﻿@{
+    var assignments = ViewBag.Assignments as List<ALTIS.Models.Assignment>;
+}
+<h2>Select Assignment to Grade</h2>
+
+<table class="table table-bordered">
+    <thead><tr><th>Assignment</th><th>Action</th></tr></thead>
+    <tbody>
+        @foreach (var a in assignments)
+        {
+            <tr>
+                <td>@a.Title</td>
+                <td>
+                    <a href="/Marks/Grade?assignmentId=@a.AssignmentID" class="btn btn-primary">
+                        Grade Submissions
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Auth/DashboardFaculty" class="btn btn-secondary">← Back to Dashboard</a>

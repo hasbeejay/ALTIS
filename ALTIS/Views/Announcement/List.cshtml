@@ -1,0 +1,19 @@
+﻿@model List<ALTIS.Models.Announcement>
+
+<h2>Classroom Announcements</h2>
+
+@foreach (var a in Model)
+{
+    <div class="card mb-3">
+        <div class="card-header">
+            <strong>@a.Title</strong> — <span class="text-muted">(@a.ClassroomTitle)</span>
+            <span class="float-end">@a.PostedAt.ToString("dd MMM yyyy hh:mm tt")</span>
+        </div>
+        <div class="card-body">
+            <p>@a.Message</p>
+        </div>
+    </div>
+}
+
+<a href="/Announcement/Add.cshtml" class="btn btn-primary">+ New Announcement</a>
+<a href="/Announcement/List.cshtml" class="btn btn-secondary">Back</a>

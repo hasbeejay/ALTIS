@@ -1,0 +1,11 @@
+﻿@model List<ALTIS.Models.Attendance>
+
+<h3>Attendance History</h3>
+<table class="table table-bordered"> 
+	<thead><tr><th>Date</th><th>Student</th><th>Status</th></tr></thead> 
+	<tbody> @foreach (var a in Model) {
+<tr> <td>@a.Date.ToShortDateString()</td> 
+	<td>@a.StudentName</td> <td>@a.Status</td> </tr>
+}
+	</tbody>
+</table> <a href="/Auth/DashboardFaculty.cshtml" class="btn btn-secondary">Back</a>

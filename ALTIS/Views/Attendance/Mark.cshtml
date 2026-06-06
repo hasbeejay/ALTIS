@@ -1,0 +1,32 @@
+﻿@model List<ALTIS.Models.Attendance>
+
+<h2>Mark Attendance</h2>
+
+<form method="post" asp-action="Mark">
+    <table class="table table-striped">
+        <thead>
+            <tr><th>Student</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @Model[i].StudentName
+                        <input type="hidden" name="[@i].StudentID" value="@Model[i].StudentID" />
+                        <input type="hidden" name="[@i].ClassroomID" value="@Model[i].ClassroomID" />
+                    </td>
+                    <td>
+                        <select class="form-control" name="[@i].Status">
+                            <option selected>Present</option>
+                            <option>Absent</option>
+                        </select>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-success">Submit Attendance</button>
+    <a href="/Attendance/SelectClassroom.cshtml" class="btn btn-outline-dark">Discard</a>
+</form>

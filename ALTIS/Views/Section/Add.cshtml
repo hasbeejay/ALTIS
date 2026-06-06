@@ -1,0 +1,18 @@
+﻿@model ALTIS.Models.Section
+
+<h2>Add New Section</h2>
+
+<form method="post" asp-action="Add">
+    <label>Section ID (e.g., A1)</label>
+    <input asp-for="SectionID" class="form-control" required />
+
+    <label>Section Name</label>
+    <input asp-for="SectionName" class="form-control" required />
+
+    <br />
+    <button type="submit" class="btn btn-primary">Add Section</button>
+    <div class="d-flex gap-2">
+        <a href="/Section/List" class="btn btn-secondary">Back</a>
+        <a href="/Auth/DashboarAdmin" class="btn btn-outline-dark">Cancel / Discard</a>
+    </div>
+</form>

@@ -167,8 +167,8 @@ CREATE TABLE ANNOUNCEMENT_COMMENTS (
 
 -- Admins
 INSERT INTO ADMINS (AdminID, StaffName, StaffMail, StaffPassword) VALUES
-(1, 'Haseeb Jalil', 'haseebjalil@admin.au.edu.pk', 'admin123'),
-(2, 'Taimur Sajid', 'taimursajid@admin.au.edu.pk', 'admin456');
+(1, 'Haseeb Jalil', 'haseebjalil@admin.au.edu.pk', 'adm123'),
+(2, 'Taimur Sajid', 'taimursajid@admin.au.edu.pk', 'adm456');
 
 -- Sections
 INSERT INTO SECTIONS (SectionID, SectionName) VALUES
@@ -177,10 +177,10 @@ INSERT INTO SECTIONS (SectionID, SectionName) VALUES
 
 -- Faculty
 INSERT INTO FACULTY (FacultyID, FirstName, LastName, Contact, FacultyMail, FacultyPassword, Address) VALUES
-(101, 'Mr. Junaid', 'Nazar', '03001234567', 'junaidnazar@altis.edu.pk', 'fcu123', 'Islamabad'),
-(102, 'Dr. Sumera', 'Hayat', '03111234567', 'sumerahayat@altis.edu.pk', 'fcu456', 'Rawalpindi'),
-(103, 'Ms. Sana', 'Iqbal', '03021234567', 'sana.iqbal@altis.edu.pk', 'fcu789', 'Lahore'),
-(104, 'Dr. Adil', 'Saeed', '03031234567', 'adil.saeed@altis.edu.pk', 'fcu321', 'Karachi');
+(101, 'Mr. Junaid', 'Nazar', '03001234567', 'junaidnazar@faculty.au.edu.pk', 'fcu123', 'Islamabad'),
+(102, 'Dr. Sumera', 'Hayat', '03111234567', 'sumerahayat@faculty.au.edu.pk', 'fcu456', 'Rawalpindi'),
+(103, 'Ms. Sana', 'Iqbal', '03021234567', 'sana.iqbal@faculty.au.edu.pk', 'fcu789', 'Lahore'),
+(104, 'Dr. Adil', 'Saeed', '03031234567', 'adil.saeed@faculty.au.edu.pk', 'fcu321', 'Karachi');
 
 
 -- Courses

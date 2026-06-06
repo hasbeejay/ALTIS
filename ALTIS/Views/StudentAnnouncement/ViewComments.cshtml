@@ -1,0 +1,14 @@
+﻿@model List<ALTIS.Models.Comment>
+
+<h3>Replies</h3>
+
+@foreach (var c in Model)
+{
+    <div class="border p-2 mb-2 bg-light rounded">
+        <strong>@c.StudentName</strong>
+        <small class="text-muted float-end">@c.CommentedAt.ToString("dd MMM hh:mm tt")</small>
+        <p>@c.Message</p>
+    </div>
+}
+
+<a href="/StudentAnnouncement/List?studentId" class="btn btn-secondary">← Back to Announcements</a>

@@ -1,0 +1,82 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faculty Dashboard</title>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Custom Dashboard CSS -->
+    <link rel="stylesheet" href="~/css/dashboard.css" />
+</head>
+<body class="faculty-dashboard">
+
+    <!-- Background Layers -->
+    <div class="background-wrapper-faculty">
+        <div class="blur-layer"></div>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+
+        <!-- Dashboard Header -->
+        <h1 class="dashboard-header">
+            <i class="fas fa-chalkboard-teacher"></i> Welcome, Faculty
+        </h1>
+
+        <!-- Tile Grid -->
+        <div class="tile-grid">
+
+            <!-- Manage Classrooms -->
+            <a href="/Classroom/List" class="tile-card faculty-tile">
+                <div class="tile-hover-glow"></div>
+                <i class="fas fa-school tile-icon"></i>
+                <h3>Manage Classrooms</h3>
+            </a>
+
+            <!-- Mark Attendance -->
+            <a href="/Attendance/SelectClassroom" class="tile-card faculty-tile">
+                <div class="tile-hover-glow"></div>
+                <i class="fas fa-check-square tile-icon"></i>
+                <h3>Mark Attendance</h3>
+            </a>
+
+            <!-- Manage Assignments -->
+            <a href="/Assignment/List" class="tile-card faculty-tile">
+                <div class="tile-hover-glow"></div>
+                <i class="fas fa-pencil-alt tile-icon"></i>
+                <h3>Manage Assignments</h3>
+            </a>
+
+            <!-- Announcements -->
+            <a href="/Announcement/List" class="tile-card faculty-tile">
+                <div class="tile-hover-glow"></div>
+                <i class="fas fa-bullhorn tile-icon"></i>
+                <h3>Announcements</h3>
+            </a>
+
+            <!-- Assigned Courses -->
+            <a href="/AssignedCourses/Index" class="tile-card faculty-tile">
+                <div class="tile-hover-glow"></div>
+                <i class="fas fa-book tile-icon"></i>
+                <h3>Assigned Courses</h3>
+            </a>
+
+            <!-- Grade Assignments -->
+            <a href="/Marks/SelectAssignment" class="tile-card faculty-tile">
+                <div class="tile-hover-glow"></div>
+                <i class="fas fa-calculator tile-icon"></i>
+                <h3>Grade Assignments</h3>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿@model List<ALTIS.Models.Classroom>
+
+<h2>Select Classroom to Mark Attendance</h2>
+
+<table class="table table-bordered">
+    <thead><tr><th>Classroom</th><th>Action</th></tr></thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Title</td>
+                <td>
+                    <a href="/Attendance/Mark?classroomId=@c.ClassroomID" class="btn btn-primary">
+                        Mark Attendance
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Auth/DashboardFaculty.cshtml" class="btn btn-secondary">← Back to Dashboard</a>

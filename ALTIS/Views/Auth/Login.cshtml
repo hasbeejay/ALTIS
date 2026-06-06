@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "ALTIS Login";
+    Layout = null; // Optional: remove layout for a clean login screen
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>ALTIS Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/login.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-box d-flex rounded shadow-lg overflow-hidden">
+
+            <!-- Left Panel: Login Form -->
+            <div class="form-side p-5 d-flex flex-column justify-content-center w-50">
+                <h2 class="text-white mb-4 fw-bold">ALTIS Login</h2>
+                <p>Welcome to Air Learning & Training Information System.</p>
+                <p>Please Login Below!</p>
+
+                <form method="post" asp-controller="Auth" asp-action="Login">
+                    <div class="mb-3">
+                        <input type="email" name="Email" class="form-control form-control-lg" placeholder="Email" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="password" name="Password" class="form-control form-control-lg" placeholder="Password" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <select name="Role" class="form-select form-select-lg" required>
+                            <option value="">Select Role</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Faculty">Faculty</option>
+                            <option value="Student">Student</option>
+                        </select>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-azure btn-lg">Login</button>
+                    </div>
+
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+                    }
+
+                    <p class="mt-4 mb-0 text-light">Forgot Password?</p>
+                </form>
+            </div>
+
+            <!-- Right Panel: Image & Welcome -->
+            <div class="graphic-side w-50 text-center p-5 d-flex flex-column justify-content-center">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

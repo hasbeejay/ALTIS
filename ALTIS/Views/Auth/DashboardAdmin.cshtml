@@ -1,0 +1,68 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Custom Dashboard CSS -->
+    <link rel="stylesheet" href="~/css/dashboard.css" />
+</head>
+<body class="admin-dashboard">
+
+    <!-- Background Layers -->
+    <div class="background-wrapper-admin">
+        <div class="blur-layer"></div>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+
+        <!-- Dashboard Header -->
+        <h1 class="dashboard-header">
+            <i class="fas fa-user-shield"></i> Welcome, Admin
+        </h1>
+
+        <!-- Tile Grid -->
+        <div class="tile-grid">
+
+            <!-- Student Tile -->
+            <a href="/Student/List" class="tile-card student-tile">
+                <div class="tile-hover-glow"></div>
+                <i class="fas fa-users tile-icon"></i>
+                <h3>Manage Students</h3>
+            </a>
+
+            <!-- Faculty Tile -->
+            <a href="/Faculty/List" class="tile-card faculty-tile">
+                <div class="tile-hover-glow"></div>
+                <i class="fas fa-chalkboard-teacher tile-icon"></i>
+                <h3>Manage Faculty</h3>
+            </a>
+
+            <!-- Results Tile -->
+            <a href="/Results/List" class="tile-card results-tile">
+                <div class="tile-hover-glow"></div>
+                <i class="fas fa-chart-bar tile-icon"></i>
+                <h3>Manage Results</h3>
+            </a>
+
+            <!-- Section Tile -->
+            <a href="/Section/List" class="tile-card section-tile">
+                <div class="tile-hover-glow"></div>
+                <i class="fas fa-building tile-icon"></i>
+                <h3>Manage Sections</h3>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>

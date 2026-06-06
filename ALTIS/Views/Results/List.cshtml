@@ -1,0 +1,38 @@
+﻿@model List<ALTIS.Models.Result>
+
+<h2>All Results</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Result ID</th>
+            <th>Student ID</th>
+            <th>Admin ID</th>
+            <th>GPA</th>
+            <th>Remarks</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.ResultID</td>
+                <td>@r.StudentID</td>
+                <td>@r.AdminID</td>
+                <td>@r.GPA</td>
+                <td>@r.Remarks</td>
+                <td>
+                    <a href="/Results/Edit/@r.ResultID" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="/Results/Delete/@r.ResultID" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Results/Add" class="btn btn-primary">+ Add New Result</a>
+<div class="d-flex gap-2">
+    <a href="/Result/List" class="btn btn-secondary">Refresh</a>
+    <a href="/Auth/DashboardAdmin" class="btn btn-outline-dark">Cancel / Discard</a>
+</div>

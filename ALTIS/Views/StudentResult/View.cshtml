@@ -1,0 +1,18 @@
+﻿@model ALTIS.Models.Result
+
+<h2>My Result</h2>
+
+@if (Model != null)
+{
+    <table class="table table-bordered w-50">
+        <tr><th>GPA</th><td>@Model.GPA</td></tr>
+        <tr><th>Remarks</th><td>@Model.Remarks</td></tr>
+        <tr><th>Approved By</th><td>@Model.AdminName</td></tr>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">Your result has not been posted yet.</div>
+}
+
+<a href="/Auth/DashboardStudent" class="btn btn-secondary">← Back to Dashboard</a>

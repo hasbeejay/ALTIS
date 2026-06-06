@@ -1,0 +1,25 @@
+﻿@model List<ALTIS.Models.Announcement>
+
+<h2>Class Announcements</h2>
+
+@foreach (var a in Model)
+{
+    <div class="card mb-3">
+        <div class="card-header">
+            <strong>@a.Title</strong> — <span class="text-muted">(@a.ClassroomTitle)</span>
+            <span class="float-end">@a.PostedAt.ToString("dd MMM yyyy hh:mm tt")</span>
+        </div>
+        <div class="card-body">
+            <p>@a.Message</p>
+            <form method="post" asp-action="AddComment" class="mt-2">
+                <input type="hidden" name="AnnouncementID" value="@a.AnnouncementID" />
+                <input type="hidden" name="StudentID" value="1001" />
+                <textarea name="Message" class="form-control" placeholder="Add a reply..." required></textarea>
+                <button type="submit" class="btn btn-sm btn-success mt-2">Reply</button>
+                <a href="/StudentAnnouncement/ViewComments?announcementId=@a.AnnouncementID" class="btn btn-sm btn-secondary mt-2 ms-2">View Replies</a>
+            </form>
+        </div>
+    </div>
+}
+
+<a href="/Auth/DashboardStudent" class="btn btn-secondary">← Back to Dashboard</a>

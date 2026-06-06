@@ -1,0 +1,25 @@
+﻿@model List<ALTIS.Models.CourseAssignment>
+
+<h2>Assigned Courses</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Course</th>
+            <th>Section</th>
+            <th>Semester</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.CourseName</td>
+                <td>@a.SectionName (@a.SectionID)</td>
+                <td>@a.Semester</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Auth/DashboardFaculty.cshtml" class="btn btn-secondary">← Back to Dashboard</a>

@@ -1,0 +1,28 @@
+﻿@model List<ALTIS.Models.Mark>
+
+<h2>Grade Submissions - @Model.FirstOrDefault()?.AssignmentTitle</h2>
+
+<form method="post" asp-action="Grade">
+    <table class="table table-striped">
+        <thead><tr><th>Student</th><th>Score</th></tr></thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @Model[i].StudentName
+                        <input type="hidden" name="[@i].StudentID" value="@Model[i].StudentID" />
+                        <input type="hidden" name="[@i].AssignmentID" value="@Model[i].AssignmentID" />
+                        <input type="hidden" name="[@i].ClassroomID" value="@Model[i].ClassroomID" />
+                    </td>
+                    <td>
+                        <input type="number" name="[@i].Score" class="form-control" min="0" max="100" required />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-success">Submit Marks</button>
+    <a href="/Marks/SelectAssignment" class="btn btn-outline-dark">Discard</a>
+</form>

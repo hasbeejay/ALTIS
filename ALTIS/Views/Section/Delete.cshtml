@@ -1,0 +1,10 @@
+﻿@model ALTIS.Models.Section
+
+<h2>Delete Section</h2>
+<p>Are you sure you want to delete section <strong>@Model.SectionID - @Model.SectionName</strong>?</p>
+
+<form method="post" asp-action="Delete">
+    <input type="hidden" asp-for="SectionID" />
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a href="/Section/List" class="btn btn-secondary">Cancel</a>
+</form>
